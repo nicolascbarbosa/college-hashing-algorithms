@@ -4,6 +4,7 @@
 
 int arr[SIZE]={};
 int count;
+int totalCount=0;
 
 int CalculateHash(int key)
 {
@@ -34,9 +35,11 @@ int Search(int element)
     int probe=CalculateHash(element);
     while(arr[probe]!=0)
     {
-        if(arr[probe]==element)
-            return probe;
+        if(arr[probe]==element){
+        	return probe;
+		}
         probe=(probe+1)%SIZE;
+        totalCount++;
     }
     printf("\nElemento %d não encontrado.\n",element);
     return -1;
@@ -71,6 +74,7 @@ int main()
             loc=Search((item));
             if(loc!=-1)
                 printf("\nElemento %d encontrado na localizacao %d",item,loc);
+                printf("\nNumero de comparacoes: %d", totalCount);
         }
     }while(item);
 
