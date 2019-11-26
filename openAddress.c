@@ -2,9 +2,9 @@
 #include<stdlib.h>
 #define SIZE 15
 
-int arr[SIZE]={};
+int arr[SIZE];
 int count;
-int totalCount=0;
+int totalCount;
 
 int CalculateHash(int key)
 {
@@ -55,7 +55,7 @@ void PrintList()
 int main()
 {
     int ch,item;
-    printf("Digite os elementos a serenminseridos na tabela de hash :");
+    printf("Digite os elementos a serem inseridos na tabela de hash :");
     printf("\nPara cancelar, Digite 0\n\n");
     do{
         scanf("%d",&item);
